@@ -1,0 +1,49 @@
+
+{% extends 'stocks/base.html' %}
+
+{% block content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Key</th>
+      <th scope="col">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Ticker</th>
+      <td>{{stock.symbol}}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">CompanyName</th>
+<!--      <td colspan="2">{{stock.companyName}}</td>-->
+      <td colspan="2">{{stock.shortName}}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Website</th>
+      <td colspan="2"><a href="{{stock.website}}">{{stock.website}}</a></td>
+    </tr>
+
+    <tr>
+      <th scope="row">Previous Price</th>
+      <td colspan="2">{{stock.previousClose}}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Current Price</th>
+      <td colspan="2">{{stock.currentPrice}}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">Change</th>
+      <td colspan="2">{{change}} </td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+{% endblock %}
